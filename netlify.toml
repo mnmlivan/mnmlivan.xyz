@@ -1,0 +1,83 @@
+[build]
+command = "npm run build"
+publish = "_site"
+
+[context.production]
+command = "npm run build"
+
+  [context.production.environment]
+  ELEVENTY_ENV = "production"
+  NODE_ENV = "production"
+  NODE_VERSION = "16"
+  TZ = "Europe/Sofia"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [".cache"]
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+  Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: raw.githubusercontent.com kit.mnmlivan.xyz; font-src 'self'; upgrade-insecure-requests; block-all-mixed-content"
+  Permissions-Policy = "interest-cohort=()"
+  Referrer-Policy = "no-referrer, strict-origin-when-cross-origin"
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "SAMEORIGIN"
+  X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  for = "/api/*"
+
+  [headers.values]
+  Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*.ico"
+
+  [headers.values]
+  Content-Type = "image/x-icon"
+
+[[headers]]
+  for = "/*.js"
+
+  [headers.values]
+  Content-Type = "text/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.json"
+
+  [headers.values]
+  Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "/*.webmanifest"
+
+  [headers.values]
+  Content-Type = "application/manifest+json; charset=utf-8"
+
+[[redirects]]
+from = "https://mnmlivan.netlify.app/*"
+to = "https://mnmlivan.xyz/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.mnmlivan.xyz/*"
+to = "https://mnmlivan.xyz/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/favicon.ico"
+to = "/assets/icons/favicon.ico"
+status = 200
+force = true
+
+[[redirects]]
+from = "*"
+to = "/404"
+status = 404

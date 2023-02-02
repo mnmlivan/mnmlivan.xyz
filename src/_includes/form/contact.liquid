@@ -1,0 +1,23 @@
+<form name="contact" action="/contact/thanks" method="post" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact">
+  <input type="hidden" name="subject" value="Email from {{ app.url | hostname }}">
+
+  <div>
+    <label for="name">Име</label>
+    <input type="text" name="name" id="name" autocomplete="name" placeholder="Твоето име" required>
+  </div>
+
+  <div>
+    <label for="email">Email адрес</label>
+    <input type="email" name="email" id="email" autocomplete="email" placeholder="you@example.com" required>
+  </div>
+
+  <div>
+    <label for="message">Съобщение</label>
+    <textarea name="message" id="message" placeholder="Напиши съобщението си тук." row="10" cols="20" required></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Изпрати</button>
+  </div>
+</form>

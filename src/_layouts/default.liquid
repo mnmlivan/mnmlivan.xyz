@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ app.language }}" dir="{{ app.dir }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Meta -->
+    <title>{{ pageTitle | markdown: 'inline' | strip_html }}</title>
+    <meta name="description" content="{{ summary | default: app.description | markdown | strip_html | strip_newlines | strip }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <!-- Tech -->
+    <link rel="preload" href="/assets/fonts/plovdiv-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/plovdiv-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Theme -->
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="hsl(220, 20%, 100%)" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="hsl(220, 20%, 10%)" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/icon.png">
+    <link rel="manifest" href="/app.webmanifest">
+    <link rel="stylesheet" href="/assets/styles/app.css">
+
+    <!-- IndieWeb -->
+    <link rel="me auth" href="{{ app.social.github }}">
+    <link rel="me" href="{{ app.social.mastodon }}">
+    <link rel="authorization_endpoint" href="{{ app.endpoint.auth }}">
+    <link rel="token_endpoint" href="{{ app.endpoint.token }}">
+    <link rel="indieauth-metadata" href="{{ app.endpoint.indieauth }}">
+    <link rel="micropub" href="{{ app.endpoint.micropub }}">
+    <link rel="microsub" href="{{ app.endpoint.microsub }}">
+
+    <!-- Webmentions -->
+    <link rel="webmention" href="{{ app.endpoint.webmention }}">
+    <link rel="pingback" href="{{ app.endpoint.pingback }}">
+
+    <!-- Robots -->
+    <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+  </head>
+  <body data-type="{{ type | default: layout }}">
+    <a href="#main" class="visually-hidden">skip to main content</a>
+
+    <main id="main" class="main{% if vocab %} | {% for root in vocab %} h-{{ root }}{% endfor %}{% endif %}"{%- if lang %} lang="{{ lang }}"{%- endif %}>
+      {%- block 'main' -%}
+      {{ layoutContent }}
+      {%- endblock -%}
+    </main>
+
+  </body>
+</html>

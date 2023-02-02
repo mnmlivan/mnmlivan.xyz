@@ -1,0 +1,18 @@
+# dotenv environment variables file
+.env
+.env.local
+
+# dependency directories
+node_modules
+
+# cache folder
+.cache
+_cache
+
+# 11ty build/generated output
+_site
+dist
+
+# serverless directories
+.netlify
+.serverless
