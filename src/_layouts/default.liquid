@@ -27,6 +27,10 @@
     <link rel="me auth" href="{{ app.social.github }}">
     <link rel="me" href="{{ app.social.mastodon }}">
 
+    <!-- Webmentions -->
+    <link rel="webmention" href="{{ app.endpoint.webmention }}">
+    <link rel="pingback" href="{{ app.endpoint.pingback }}">
+
     <!-- Robots -->
     <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
     <link rel="canonical" href="{{ canonicalUrl }}">

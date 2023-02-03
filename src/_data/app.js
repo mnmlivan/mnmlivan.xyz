@@ -29,7 +29,7 @@ module.exports = {
     indieauth: '',
     micropub: '',
     microsub: '',
-    webmention: '',
-    pingback: '',
+    webmention: 'https://webmention.io/mnmlivan.xyz/webmention',
+    pingback: 'https://webmention.io/mnmlivan.xyz/xmlrpc',
   },
 };
