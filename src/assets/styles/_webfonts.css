@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'Plovdiv';
+  font-family: "Plovdiv";
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('/assets/fonts/plovdiv-regular.woff2') format('woff2');
+  src: url("/assets/fonts/plovdiv-regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Plovdiv';
+  font-family: "Plovdiv";
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-  src: url('/assets/fonts/plovdiv-bold.woff2') format('woff2');
+  src: url("/assets/fonts/plovdiv-bold.woff2") format("woff2");
 }
 
 :root:lang(bg),
 :not(:lang(bg)) > :lang(bg) {
-  quotes: '\201e''\201c''\201e''\201c';
+  quotes: "\201e" "\201c" "\201e" "\201c";
 }

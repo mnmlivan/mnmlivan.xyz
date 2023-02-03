@@ -1,8 +1,5 @@
 require('dotenv').config();
 
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
-const { EleventyRenderPlugin } = require('@11ty/eleventy');
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add('./src/**/template.md');
 
@@ -25,8 +22,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/assets/css');
 
   // Official plugins
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-bundle'));
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   // Filters
@@ -64,7 +60,5 @@ module.exports = function (eleventyConfig) {
       includes: '_includes',
       layouts: '_layouts',
     },
-
-    pathPrefix: '/',
   };
 };

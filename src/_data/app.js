@@ -5,6 +5,13 @@ module.exports = {
     'Тези, които търсят истината, винаги трябва да бъдат предпочитани пред онези, които твърдят, че вече са я открили',
   language: 'bg',
   dir: 'ltr',
+  theme: {
+    light: 'hsl(220, 20%, 100%)',
+    dark: 'hsl(220, 20%, 10%)',
+    favicon: '/assets/icons/favicon.ico',
+    icon: '/assets/icons/icon.svg',
+    touchicon: '/assets/icons/icon.png'
+  },
   repo: 'https://github.com/mnmlivan/mnmlivan.xyz',
   social: {
     github: 'https://github.com/mnmlivan',

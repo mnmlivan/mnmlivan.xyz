@@ -1,6 +1,6 @@
-@import '_reset.css';
-@import '_webfonts.css';
-@import '_variables.css';
+@import "_reset.css";
+@import "_webfonts.css";
+@import "_variables.css";
 
 body {
   background: var(--color-light);
