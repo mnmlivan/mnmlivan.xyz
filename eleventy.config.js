@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
   // Shortcodes
 
   // Collections
+  eleventyConfig.addCollection('category', require('./lib/collections/category.js'));
   eleventyConfig.addCollection('sitemap', require('./lib/collections/sitemap.js'));
 
   // Transforms
