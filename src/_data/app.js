@@ -28,7 +28,7 @@ module.exports = {
     token: 'https://kit.mnmlivan.xyz/auth/token',
     indieauth: 'https://kit.mnmlivan.xyz/auth/metadata',
     micropub: 'https://kit.mnmlivan.xyz/micropub',
-    microsub: '',
+    microsub: 'https://aperture.p3k.io/microsub/836',
     webmention: 'https://webmention.io/mnmlivan.xyz/webmention',
     pingback: 'https://webmention.io/mnmlivan.xyz/xmlrpc',
   },
