@@ -47,5 +47,9 @@
       {%- endblock -%}
     </main>
 
+    <span class="h-card | visually-hidden">
+      <a rel="me" href="/">{{ app.author.name }}</a>
+      <img class="u-photo" src="{{ app.author.avatar }}" />
+    </span>
   </body>
 </html>

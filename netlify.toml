@@ -60,24 +60,34 @@ package = "netlify-plugin-cache"
   Content-Type = "application/manifest+json; charset=utf-8"
 
 [[redirects]]
-from = "https://mnmlivan.netlify.app/*"
-to = "https://mnmlivan.xyz/:splat"
-status = 301
-force = true
+  from = "https://mnmlivan.netlify.app/*"
+  to = "https://mnmlivan.xyz/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
-from = "https://www.mnmlivan.xyz/*"
-to = "https://mnmlivan.xyz/:splat"
-status = 301
-force = true
+  from = "https://www.mnmlivan.xyz/*"
+  to = "https://mnmlivan.xyz/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
-from = "/favicon.ico"
-to = "/assets/icons/favicon.ico"
-status = 200
-force = true
+  from = "/favicon.ico"
+  to = "/assets/icons/favicon.ico"
+  status = 200
+  force = true
 
 [[redirects]]
-from = "*"
-to = "/404"
-status = 404
+  from = "*"
+  to = "/404"
+  status = 404
+
+[[redirects]]
+  from = "/.well-known/host-meta*"
+  to = "https://fed.brid.gy/.well-known/host-meta:splat"
+  status = 302
+
+[[redirects]]
+  from = "/.well-known/webfinger*"
+  to = "https://fed.brid.gy/.well-known/webfinger"
+  status = 302
