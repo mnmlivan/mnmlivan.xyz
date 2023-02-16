@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('travel', require('./lib/collections/travel.js'));
 
   // Transforms
-  // eleventyConfig.addTransform('htmlmin', require('./lib/transforms/htmlmin.js'));
+  eleventyConfig.addTransform('htmlmin', require('./lib/transforms/htmlmin.js'));
 
   // Extensions
   eleventyConfig.addExtension('css', require('./lib/extensions/css.js'));
