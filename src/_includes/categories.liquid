@@ -1,0 +1,5 @@
+<ul role="list" class="categories">
+{%- for category in categories %}
+  <li><a class="p-category" rel="tag" href="/categories/{{ category | slugify }}">{{ category }}</a></li>
+{%- endfor -%}
+</ul>

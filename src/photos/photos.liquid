@@ -1,0 +1,11 @@
+---
+layout: index
+pagination:
+  data: collections.photos
+  size: 36
+  alias: photos
+permalink: "photos/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}.html{% else %}/{% endif %}"
+override:tags: []
+eleventyComputed:
+  title: Образи
+---

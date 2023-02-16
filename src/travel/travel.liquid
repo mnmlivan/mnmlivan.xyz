@@ -1,0 +1,30 @@
+---
+layout: index
+title: Пътешествия
+summary: Всяко пътуване има своите приключения.
+permalink: "/travel/"
+override:tags: []
+---
+{%- assign groupedPosts = collections.travel | reverse | groupby -%}
+{%- for arr in groupedPosts %}
+  {%- assign year = arr[0] -%}
+  {%- assign posts = arr[1] -%}
+  <h2>{{ year }}</h2>
+    {%- for item in posts %}
+      <article class="h-entry">
+        <footer>
+          <time class="dt-published | text-base" datetime="{{ item.date | dateToRfc3339 }}">{{ item.date | datetime: 'dd LLLL' }}</time>
+        </footer>
+        <header>
+          <p class="p-name">
+            <b><a class="u-url" rel="bookmark" href="{{ item.url }}">{{ item.data.title | markdown: 'inline' }}</a></b>
+          </p>
+        </header>
+        {%- if item.data.summary -%}
+          <div class="p-summary">
+            {{ item.data.summary | markdown }}
+          </div>
+        {%- endif -%}
+      </article>
+    {%- endfor %}
+{%- endfor %}

@@ -8,6 +8,8 @@
     <title>{{ pageTitle | markdown: 'inline' | strip_html }}</title>
     <meta name="description" content="{{ summary | default: app.description | markdown | strip_html | strip_newlines | strip }}">
     <meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="RSS (Atom) Feed">
+    <link rel="alternate" href="/feed.json" type="application/feed+json" title="JSON Feed">
 
     <!-- Tech -->
     <link rel="preload" href="/assets/fonts/plovdiv-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -26,6 +28,7 @@
     <!-- IndieWeb -->
     <link rel="me auth" href="{{ app.social.github }}">
     <link rel="me" href="{{ app.social.mastodon }}">
+    <link rel="me" href="{{ app.social.pixelfed }}">
     <link rel="authorization_endpoint" href="{{ app.endpoint.auth }}">
     <link rel="token_endpoint" href="{{ app.endpoint.token }}">
     <link rel="indieauth-metadata" href="{{ app.endpoint.indieauth }}">
@@ -40,12 +43,16 @@
   </head>
   <body data-type="{{ type | default: layout }}">
     <a href="#main" class="visually-hidden">skip to main content</a>
+    {%- render 'icons' -%}
+    {%- render 'banner', page: page, tags: tags -%}
 
-    <main id="main" class="main{% if vocab %} | {% for root in vocab %} h-{{ root }}{% endfor %}{% endif %}"{%- if lang %} lang="{{ lang }}"{%- endif %}>
+    <main id="main" class="main{% if vocab %} | {% for root in vocab %}h-{{ root }}{% endfor %}{% endif %}"{%- if lang %} lang="{{ lang }}"{%- endif %}>
       {%- block 'main' -%}
       {{ layoutContent }}
       {%- endblock -%}
     </main>
+
+    {%- render 'contentinfo', page: page, tags: tags -%}
 
     <span class="h-card | visually-hidden">
       <a rel="me" href="/">{{ app.author.name }}</a>

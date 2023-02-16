@@ -1,0 +1,10 @@
+{%- layout 'default' -%}
+{%- block 'main' -%}
+<div class="region prose flow wrapper">
+  {{ content }}
+  {%- render 'meta'
+    categories: category
+    syndication: syndication
+  -%}
+</div>
+{%- endblock -%}

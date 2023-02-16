@@ -1,0 +1,11 @@
+<header role="banner">
+  <div class="wrapper repel">
+  <a rel="home" href="/">{{ app.title }}</a>
+  <nav aria-label="site">
+    {% render 'navigation' with navigation.primary
+      page: page
+      tags: tags
+    -%}
+  </nav>
+  </div>
+</header>

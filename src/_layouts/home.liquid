@@ -1,7 +1,21 @@
 {%- layout 'default' -%}
 {%- block 'main' -%}
-<article>
-  <h1>{{ title }}</h1>
-  {{ content }}
+<article class="wrapper region prose flow">
+    <h1>{{ title }}</h1>
+
+    {{ layoutContent }}
+
+    <h2>Наскоро публикувано</h2>
+
+    <ul>
+    {%- for item in collections.articles limit: 5 %}
+    <li class="h-entry">
+      <b><a class="p-name u-url" rel="bookmark" href="{{ item.url }}">{{ item.data.title | markdown: 'inline' }}</a></b>
+      <p class="p-summary">{{ item.data.summary | markdown: 'inline' }}</p>
+    </li>
+    {%- endfor %}
+    </ul>
+
+    <p>Към всички <a href="/articles/">записки</a> &raquo;</p>
 </article>
 {%- endblock -%}

@@ -1,0 +1,29 @@
+---
+layout: index
+pagination:
+  data: collections.notes
+  size: 36
+  alias: notes
+permalink: "notes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}.html{% else %}/{% endif %}"
+override:tags: []
+eleventyComputed:
+  title: Кратки бележки
+  summary: Кратки неформални бележки или записки.
+introduction: Неформални бележки или записки; писани главно за мен, а понякога и за други, също.
+---
+{%- for item in pagination.items %}
+<article class="h-entry">
+  <footer>
+    <a class="u-url" rel="bookmark" href="{{ item.url }}">
+      <time class="dt-published | text-base" datetime="{{ item.date | dateToRfc3339 }}">
+        {{ item.date | datetime: 'dd LLLL yyyy' }} г. в {{ item.date | datetime: 'HH:mm' }} ч.
+      </time>
+    </a>
+  </footer>
+  <div class="e-content p-name">
+    {{ item._templateContent -}}
+  </div>
+</article>
+{%- endfor %}
+
+{%- render 'pagination' with pagination -%}

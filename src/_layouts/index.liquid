@@ -1,0 +1,10 @@
+{%- layout 'default' -%}
+{%- block 'main' -%}
+<article class="wrapper region prose flow">
+  <h2>{{ title }}</h2>
+  {%- if introduction -%}
+    {{ introduction | markdown }}
+  {%- endif -%}
+  {{ layoutContent }}
+</article>
+{%- endblock -%}

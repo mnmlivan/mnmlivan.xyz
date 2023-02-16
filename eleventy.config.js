@@ -22,25 +22,33 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/assets/css');
 
   // Official plugins
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-bundle'));
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   // Filters
   eleventyConfig.addFilter('datetime', require('./lib/filters/datetime.js'));
+  eleventyConfig.addFilter('groupby', require('./lib/filters/groupby.js'));
   eleventyConfig.addFilter('hostname', require('./lib/filters/hostname.js'));
+  eleventyConfig.addFilter('htmlfeed', require('./lib/filters/entrytofeed.js'));
   eleventyConfig.addFilter('limit', require('./lib/filters/limit.js'));
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'));
+  eleventyConfig.addFilter('syndication', require('./lib/filters/syndication.js'));
   eleventyConfig.addLiquidFilter('absoluteUrl', require('@11ty/eleventy-plugin-rss').absoluteUrl);
   eleventyConfig.addLiquidFilter('dateToRfc3339', require('@11ty/eleventy-plugin-rss').dateToRfc3339);
 
   // Shortcodes
+  eleventyConfig.addShortcode('jsonfeed', require('./lib/shortcodes/jsonfeed.js'));
 
   // Collections
+  eleventyConfig.addCollection('articles', require('./lib/collections/articles.js'));
+  eleventyConfig.addCollection('books', require('./lib/collections/books.js'));
   eleventyConfig.addCollection('category', require('./lib/collections/category.js'));
+  eleventyConfig.addCollection('notes', require('./lib/collections/notes.js'));
+  eleventyConfig.addCollection('photos', require('./lib/collections/photos.js'));
   eleventyConfig.addCollection('sitemap', require('./lib/collections/sitemap.js'));
+  eleventyConfig.addCollection('travel', require('./lib/collections/travel.js'));
 
   // Transforms
-  eleventyConfig.addTransform('htmlmin', require('./lib/transforms/htmlmin.js'));
+  // eleventyConfig.addTransform('htmlmin', require('./lib/transforms/htmlmin.js'));
 
   // Extensions
   eleventyConfig.addExtension('css', require('./lib/extensions/css.js'));

@@ -1,0 +1,22 @@
+{%- layout 'default' -%}
+{%- block 'main' -%}
+<article class="wrapper region prose flow">
+  <footer>
+    <dl>
+      <dt class="visually-hidden">Публикувано на</dt>
+      <dd>
+        <time class="dt-published | text-base" datetime="{{ date | dateToRfc3339 }}">
+          {{ date | datetime: 'dd LLLL yyyy' }}г. в {{ date | datetime: 'HH:mm' }} ч.
+        </time>
+      </dd>
+    </dl>
+  </footer>
+  <div class="e-content p-name | region prose flow">
+    {{ content }}
+  </div>
+  {%- render 'meta'
+    categories: category
+    syndication: syndication
+  -%}
+</article>
+{%- endblock -%}

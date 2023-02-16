@@ -1,0 +1,30 @@
+{%- layout 'default' -%}
+{%- block 'main' -%}
+<article class="wrapper region prose flow">
+  <footer>
+    <dl>
+      <dt class="visually-hidden">Публикувано на</dt>
+      <dd>
+        <time class="dt-published | text-base" datetime="{{ date | dateToRfc3339 }}">{{ date | datetime: 'dd LLLL yyyy' }}</time>
+      </dd>
+      {%- if location -%}
+      <dt class="visually-hidden">Публикувано в</dt>
+      <dd class="p-location h-adr | text-base">
+        <span class="p-locality">{{ location.locality }}</span>,
+        <span class="p-country-name">{{ location.country }}</span>
+      </dd>
+      {%- endif -%}
+    </dl>
+  </footer>
+  <header>
+    <h1 class="p-name">{{ title | newline_to_br }}</h1>
+  </header>
+  <div class="e-content | prose flow">
+    {{ content }}
+  </div>
+    {%- render 'meta'
+    categories: category
+    syndication: syndication
+  -%}
+</article>
+{%- endblock -%}

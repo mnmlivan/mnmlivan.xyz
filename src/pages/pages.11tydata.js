@@ -1,4 +1,4 @@
 module.exports = {
-  layout: "page",
-  date: "Last Modified",
+  layout: 'page',
+  date: 'Last Modified',
 };

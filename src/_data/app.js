@@ -10,12 +10,13 @@ module.exports = {
     dark: 'hsl(220, 20%, 10%)',
     favicon: '/assets/icons/favicon.ico',
     icon: '/assets/icons/icon.svg',
-    touchicon: '/assets/icons/icon.png'
+    touchicon: '/assets/icons/icon.png',
   },
   repo: 'https://github.com/mnmlivan/mnmlivan.xyz',
   social: {
     github: 'https://github.com/mnmlivan',
     mastodon: 'https://indieweb.social/@mnmlivan',
+    pixelfed: 'https://pixelfed.social/mnmlivan',
   },
   author: {
     name: 'mnmlivan',
