@@ -2,8 +2,10 @@
 layout: index
 title: Архив
 introduction: Категории
-permalink: /categories/
+permalink: categories/
+robots: true
 eleventyComputed:
   pageTitle: "{{ introduction }} · {{ app.title }}"
-robots: true
 ---
+{%- assign categories = collections.category | sort_natural -%}
+{%- render 'categories' with categories -%}

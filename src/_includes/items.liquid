@@ -1,0 +1,14 @@
+<ul role="list">
+{%- for item in items limit: limit -%}
+  {%- assign id = item.wm-id | default: forloop.rindex -%}
+  <li>
+    {%- render 'item/{{ component | default: item.data.type | default: item.data.layout }}'
+      id: id
+      item: item
+      hideSummary: itemHideSummary
+    -%}
+  </li>
+{%- else -%}
+  <li>{{ itemsNoContent | markdown: 'inline' }}</li>
+{%- endfor -%}
+</ul>

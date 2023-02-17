@@ -1,0 +1,18 @@
+<article class="h-entry">
+  <div class="e-content p-name">
+    {{ item._templateContent -}}
+    {% if item.data.photo %}
+      {%- if item.data.photo.size > 1 %}{% assign preset = 'card' %}{% endif -%}
+      {%- render 'photos' with item.data.photo
+        imageClass: 'u-photo'
+        imagePreset: preset | default: false
+      -%}
+    {% endif %}
+  </div>
+
+  <footer>
+    <a class="u-url" rel="bookmark" href="{{ item.url }}">
+      <time class="dt-published | text-base" datetime="{{ item.date | dateToRfc3339 }}">{{ item.date | datetime: 'dd LLLL yyyy' }}</time>
+    </a>
+  </footer>
+</article>

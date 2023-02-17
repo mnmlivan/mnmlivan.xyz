@@ -303,6 +303,7 @@ pre[class*='language-'] {
 }
 
 @media (max-width: 49em) {
+
   .prose a,
   .prose > * {
     word-wrap: break-word;

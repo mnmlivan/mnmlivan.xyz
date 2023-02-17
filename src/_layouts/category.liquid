@@ -1,3 +1,10 @@
+{%- assign items = collections.all | includes: 'data.category',title | reverse -%}
 {%- layout 'default' -%}
 {%- block 'main' -%}
+<article class="wrapper region prose flow">
+  <h2>{{ title }}</h2>
+  <div class="region">
+  {%- render 'items' with items -%}
+  </div>
+</article>
 {%- endblock -%}

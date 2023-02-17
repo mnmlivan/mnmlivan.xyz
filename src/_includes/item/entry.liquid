@@ -1,0 +1,16 @@
+<article class="h-entry">
+  <footer>
+    <time class="dt-published | text-base" datetime="{{ item.date | dateToRfc3339 }}">{{ item.date | datetime: 'dd LLLL yyyy' }}</time>
+  </footer>
+  <header>
+    <h3 class="p-name">
+      <a class="u-url" rel="bookmark" href="{{ item.url }}">{{ item.data.title | markdown: 'inline' }}</a>
+    </h3>
+  </header>
+
+{%- if item.data.summary -%}
+  <div class="p-summary">
+    {{ item.data.summary | markdown }}
+  </div>
+{%- endif -%}
+</article>

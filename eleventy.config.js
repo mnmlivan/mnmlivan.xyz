@@ -26,9 +26,11 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('datetime', require('./lib/filters/datetime.js'));
+  eleventyConfig.addFilter('excludes', require('./lib/filters/excludes.js'));
   eleventyConfig.addFilter('groupby', require('./lib/filters/groupby.js'));
   eleventyConfig.addFilter('hostname', require('./lib/filters/hostname.js'));
   eleventyConfig.addFilter('htmlfeed', require('./lib/filters/entrytofeed.js'));
+  eleventyConfig.addFilter('includes', require('./lib/filters/includes.js'));
   eleventyConfig.addFilter('limit', require('./lib/filters/limit.js'));
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'));
   eleventyConfig.addFilter('syndication', require('./lib/filters/syndication.js'));
