@@ -7,5 +7,7 @@ module.exports = {
   eleventyComputed: {
     title:
       '{% if photo.size > 1 -%}{{ photo.size }} снимки{% else %}Снимка{% endif %}: {{ date | datetime: "dd LLLL yyyy" }}',
+    summary:
+      '{% if photo.size > 1 -%}{{ photo.size }} снимки{% else %}Снимка{% endif %}: {{ date | datetime: "dd LLLL yyyy" }}',
   },
 };
