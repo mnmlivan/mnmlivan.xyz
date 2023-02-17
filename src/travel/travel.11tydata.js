@@ -3,5 +3,5 @@ module.exports = {
   type: 'entry',
   permalink: '/travel/{{ page.fileSlug }}/',
   tags: ['post', 'travel'],
-  vocab: 'entry',
+  vocab: 'event',
 };

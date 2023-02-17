@@ -4,6 +4,8 @@ title: Пътешествия
 summary: Всяко пътуване има своите приключения.
 permalink: "/travel/"
 override:tags: []
+eleventyComputed:
+  introduction: "Пътешествия, съставени от [{{ collections.travel.size }} индивидуални пътувания](/travel/)."
 ---
 {%- assign groupedPosts = collections.travel | reverse | groupby -%}
 {%- for arr in groupedPosts %}
