@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/icons');
   eleventyConfig.addPassthroughCopy('./src/assets/img');
   eleventyConfig.addPassthroughCopy('./src/assets/fonts');
+  eleventyConfig.addPassthroughCopy('./src/media');
 
   // Run Eleventy when these files change:
   eleventyConfig.addWatchTarget('./src/**/*.{jpg,jpeg,png,svg,webp}');
@@ -38,6 +39,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter('dateToRfc3339', require('@11ty/eleventy-plugin-rss').dateToRfc3339);
 
   // Shortcodes
+  eleventyConfig.addShortcode('image', require('./lib/shortcodes/image.js'));
   eleventyConfig.addShortcode('jsonfeed', require('./lib/shortcodes/jsonfeed.js'));
 
   // Collections
