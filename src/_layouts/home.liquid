@@ -8,7 +8,7 @@
     <h2>Наскоро публикувано</h2>
 
     <ul>
-    {%- for item in collections.articles limit: 5 %}
+    {%- for item in collections.feed limit: 5 %}
     <li class="h-entry">
       <b><a class="p-name u-url" rel="bookmark" href="{{ item.url }}">{{ item.data.title | markdown: 'inline' }}</a></b>
       <p class="p-summary">{{ item.data.summary | markdown: 'inline' }}</p>

@@ -16,7 +16,7 @@ permalink: /feed.xml
   <link rel="alternate" href="{{ app.url }}" type="text/html"/>
   <icon>{{ app.theme.icon | absoluteUrl: app.url }}</icon>
   <rights>&#169; {{ page.date | datetime: 'yyyy' }} {{ app.author.name }}. Content Creative Commons licensed unless otherwise stated.</rights>
-{%- for item in collections.articles limit: 10 %}
+{%- for item in collections.feed limit: 10 %}
   <entry>
     <id>{{ item.url | absoluteUrl: app.url }}</id>
     <title>{{ item.data.title | markdown: 'inline' | escape | strip_html | strip_newlines }}</title>
