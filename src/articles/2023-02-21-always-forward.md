@@ -1,10 +1,11 @@
 ---
 date: 2023-02-21T14:49:58.098+02:00
+updated: 2023-02-21T14:51:32.979+02:00
 title: Винаги напред
 excerpt: Каквото и да искаш, прави го всеки ден, винаги напред.
 visibility: public
-mp-syndicate-to:
-  - https://indieweb.social/@mnmlivan
+syndication:
+  - https://indieweb.social/@mnmlivan/109902816384868648
 references:
   https://indieweb.social/@mnmlivan:
     url: https://indieweb.social/@mnmlivan
