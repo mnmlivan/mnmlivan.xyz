@@ -15,7 +15,8 @@ module.exports = {
   repo: 'https://github.com/mnmlivan/mnmlivan.xyz',
   social: {
     github: 'https://github.com/mnmlivan',
-    mastodon: 'https://indieweb.social/@mnmlivan',
+    indieweb: 'https://indieweb.social/@mnmlivan',
+    mastodon: 'https://mastodon.social/@mnmlivan',
     pixelfed: 'https://pixelfed.social/mnmlivan',
   },
   author: {
